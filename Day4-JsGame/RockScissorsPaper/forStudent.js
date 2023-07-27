@@ -111,8 +111,9 @@ const randomNumber = (n, m) => { // n부터 m까지의 랜덤한 숫자를 만�
      * n~m까지의 난수를 발생시키는 random 함수를 만드세요! (Tip. 2일차 JavaScript 기초 파일의 27페이지를 확인해보세요!)
      * return 타입은 정수 타입인 INT입니다!
      */
+	const rand1 = Math.floor(Math.random()*(m-n))+n;
+    return rand1;
 };
-
 const judge = (answer, submit) => { // 결과를 "Draw", "Lose", "Win" 형태로 도출하여 String의 형태로 return하세요!
 	/* 
      * 가위 = -1, 바위 = 0, 보자기 = 1 입니다.
@@ -121,4 +122,11 @@ const judge = (answer, submit) => { // 결과를 "Draw", "Lose", "Win" 형태로
      * answser와 submit의 값을 비교하여 자신이 비겼는지, 졌는지, 이겼는지 판단하는 함수를 만드세요! 
      * return 타입은 문자열인 String이며, "Draw", "Lose", "Win" 중 하나로 return되게 하면 됩니다!
      */
+	if(answer>submit){
+        return "Lose";
+     }else if(answer===submit){
+        return "draw";
+     }else if(answer<submit){
+        return "victory"
+     }
 };
